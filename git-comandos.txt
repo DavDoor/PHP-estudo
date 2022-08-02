@@ -1,0 +1,5 @@
+Criar repositorio
+git init - inicializa um repositorio local
+"git add ." - adiciona todos os arquivos da pasta local para o repositorio remoto
+ 
+
