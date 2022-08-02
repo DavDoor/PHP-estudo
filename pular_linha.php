@@ -1,10 +1,10 @@
 <?php
-    function pularLine () {
+    function pularLine() {
         
         echo "<br><br>";
     }
 
-    function meuNome () {
+    function meuNome() {
 
         echo "Meu nome é David.";
         pularLine();
