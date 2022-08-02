@@ -1,5 +1,15 @@
 Criar repositorio
 git init - inicializa um repositorio local
+----------------------------------------------------------------------------------
 "git add ." - adiciona todos os arquivos da pasta local para o repositorio remoto
- 
+git status - ver status do repositorio local e arquivos recentes
+"git commit -m" - enviar confirmação de envio 
+// git push //
+----------------------------------------------------------------------------------
+git status
+"git remote add origin https://github.com/DavDoor/PHP-estudo.git" - adiciona a origem remota do git para enviar o codigo para este link no github
+git push
+git push --set-upstream origin master - enviar codigo para o github e setar(configurar) a master como ramo(branch) principal
 
+git clone  (link) - copiar o repositorio remoto para sua maquina local
+git pull - trazer modificações do repositorio remoto para o local (que já esta inicializado na maquina local) 
