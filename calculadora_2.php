@@ -1,8 +1,8 @@
 <?php
     // 1) Modificação do arquivo "calculadora"(soma) com as quatro operações.
 
-    $n1 = 1;
-    $n2 = 2;
+    $n1 = 10;
+    $n2 = 10;
 
     // Função SOMAR
    function somaNumero($n1, $n2) {
@@ -12,7 +12,7 @@
         return $totalSoma; 
    }
 
-    somaNumero(10, 7);
+    somaNumero($n1, $n2);
     echo "<br><br>";
 
     //função SUBTRAIR
@@ -23,7 +23,7 @@
         return $totalSub;
     }
 
-    subNumero(10, 2);
+    subNumero($n1, $n2);
     echo "<br><br>";
     
     // Função MULTIPLICAR
@@ -34,7 +34,7 @@
         return $totalMult; 
    }
 
-    multNum(10, 5);
+    multNum($n1, $n2);
     echo "<br><br>";
 
    //função DIVIDIR
@@ -45,6 +45,6 @@
         return $totalDiv;
     }
 
-    divNumero(20, 4);
+    divNumero($n1, $n2);
 
 ?>
