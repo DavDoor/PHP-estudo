@@ -32,21 +32,21 @@
 
     else if ($operacao == "subtracao"){
 
-        echo subtracao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=soma
+        echo subtracao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=subtracao
     }
     
     else if ($operacao == "multiplicacao"){
 
-        echo multiplicacao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=soma
+        echo multiplicacao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=multiplicacao
     }
     else if ($operacao == "divisao"){
 
-        echo divisao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=soma
+        echo divisao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=divisao
     }
     else{
         echo "Não é uma operação!";
     }
         
-
+//"http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=atalho" (distinto)
 
 ?>
