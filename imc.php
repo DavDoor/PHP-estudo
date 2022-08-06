@@ -5,29 +5,31 @@ $altura = $_GET["altura"];
 
 function calcularIMC ($peso, $altura){
 
-        echo $imc = $peso / ($altura * $altura);
+        $imc = $peso / ($altura * $altura);
+        echo $imc;
         return $imc;
     }
 
-    $imc = calcularIMC($peso, $altura);
+    $imc = round(calcularIMC($peso, $altura), 2);
+    echo "<br>";
 
-    if ($imc <= 18,5){
+    if ($imc <= 18.5){
 
         echo "Baixo Peso";
     }
-    if else($imc >= 18,5 && $imc <= 24,9){
+    else if($imc >= 18.5 && $imc <= 24.9){
 
         echo "Peso Normal";
     }
-    if else($imc >= 25 && $imc <= 29){
+    else if($imc >= 25 && $imc <= 29){
 
         echo "Excesso de Peso";
     }
-    if else($imc >= 30 && $imc <= 35 ){
+    else if($imc >= 30 && $imc <= 35 ){
 
         echo "Obesidade";
     }
-    else($imc > 35){
+    else{ // maior que 35 (>)
         
         echo "Obesidade Extrema";
     }
