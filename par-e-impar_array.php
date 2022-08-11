@@ -4,11 +4,22 @@
     //verfiicar o for, colocando o if ($i % 2 == 0) será par
 
     for ($n=10; $n <= 100; $n++){
+        echo "Números pares entre 10 e 100:";
+        echo "<br>";
 
-        $par = $n * 2;
-        echo $n;
-        echo "<br><br>";
+            for ($n=10; $n <= 100; $n++){
+
+                $par = $n % 2;
+                echo "<br>";
+
+            if($par % 2 == 0){
+                echo $n . " é par.";
+            } 
+            else {
+                echo $n . " é ímpar.";
+            }
+        }
+               
     }
-
     
 ?>
