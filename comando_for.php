@@ -8,6 +8,7 @@
         echo $c;
         echo "<br>";
     }
+    echo "<br>";
 
     for ($i = 0; $i < count($carros); $i++){
 
