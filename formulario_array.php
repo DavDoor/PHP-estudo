@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!--
     //criar um html com um input-text(caixa de texto) que receba um nome
     //criar um formulario(_get) com um campo e um botão para enviar o formulario
@@ -9,13 +8,31 @@
 
     "_Get" captura o que foi digitadona URL;
     "_POST" não recupera 
+
+    //nesse caso irá resetar o array a cada requisição pois ele nao sera persistido 
 -->
 <?php
-    $paises = ["Brasil", "México", "EUA", "França", "Holanda"];
+    $paises = array("Brasil", "México", "EUA", "França", "Holanda");
     
+    $search = $_GET['paises'];
+    array_push($paises, $search);
+    echo var_dump($paises);
+    $exists = false;
 
-    $paises = $_GET['paises'];
-    echo $paises;
+    for($i = 0; $i < count($paises); $i++){
+
+        if ($paises[$i] === $search){
+            
+            $exists = true;
+            echo "Item econtrado."; 
+        }
+    }
+
+    if(!$exists){
+
+        echo "Item não encontrado.";
+    }
+
 ?>
 
     <form action=" " method="get">
@@ -25,7 +42,7 @@
 
 
 
-</html>
+
 
 
     

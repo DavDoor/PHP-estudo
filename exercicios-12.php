@@ -7,27 +7,20 @@
 
     $cores = array ("azul", "verde", "vermelho", "amarelo", "rosa", "marrom");
 
-    echo $cores[2];
-    echo "<br><br>";
-
-    echo "Iteração de array:";
-    echo "<br>";
     //var_dump($cores);
+    $search = "marrom";
+    $exists = false;
 
-    for($i = 0; $i <= count($cores); $i++){
+    for($i = 0; $i < count($cores); $i++){
 
-        echo $cores[$i];
-        echo "<br>";
-        $i++;
+        if ($cores[$i] === $search){
+        
+            $exists = true;
+            echo "Item econtrado na posição " . $i; 
+        }
     }
 
-    $item = "rosa";
-
-    if($item === array($cores)){
-
-        echo "Item econtrado."; 
-    }
-    else{
+    if(!$exists){
 
         echo "Item não encontrado.";
     }
