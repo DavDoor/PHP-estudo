@@ -21,15 +21,15 @@
         $i++;
     }
 
-    $item = "laranja";
+    $item = "rosa";
 
-    if($item === $cores){
+    if($item === array($cores)){
 
-        echo "Item Econtrado:" . $cores[$i]; 
+        echo "Item econtrado."; 
     }
     else{
 
-        echo "Item não encontrado";
+        echo "Item não encontrado.";
     }
   
 ?>
