@@ -11,7 +11,7 @@ function calcularIMC ($peso, $altura){
     }
 
     $imc = round(calcularIMC($peso, $altura), 2);
-    echo "<br>";
+    echo "<br><br>";
 
     if ($imc <= 18.5){
 

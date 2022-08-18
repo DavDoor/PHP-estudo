@@ -1,9 +1,18 @@
-<?php
-    // 1) Modificação do arquivo "calculadora"(soma) com as quatro operações.
 
-    $n1 = $_GET["n1"];
-    $n2 = $_GET["n2"];
-    $operacao = $_GET["operacao"];
+<!--1) Modificação do arquivo "calculadora"(soma) com as quatro operações.
+        //para casa
+-->
+        <h3>Calculadora de Operações Multiplas</h3>
+        <form action=" " method="post">
+            Campo 1:  <input type="text" name="n1" placeholder="Numero 1" required><br>
+            Campo 2: <input type="text" name="n2" placeholder="Numero 2" required><br>
+            <p><input type="submit" /></p>
+        </form>
+
+<?php
+    $n1 = $_POST["n1"];
+    $n2 = $_POST["n2"];
+    $operacao = $_POST["operacao"];
 
 
     // Função SOMAR
@@ -27,26 +36,24 @@
     }
 
     if ($operacao == "soma" || $operacao == "atalho"){
-        echo soma($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=soma
+        echo soma($n1, $n2); 
     }
 
     else if ($operacao == "subtracao"){
 
-        echo subtracao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=subtracao
+        echo subtracao($n1, $n2); 
     }
     
     else if ($operacao == "multiplicacao"){
 
-        echo multiplicacao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=multiplicacao
+        echo multiplicacao($n1, $n2); 
     }
     else if ($operacao == "divisao"){
 
-        echo divisao($n1, $n2); //http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=divisao
+        echo divisao($n1, $n2); 
     }
     else{
         echo "Não é uma operação!";
     }
-        
-//"http://localhost/estudo/calculadora_3.php?n1=10&n2=20&operacao=atalho" (distinto)
 
 ?>
