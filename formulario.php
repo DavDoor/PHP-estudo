@@ -18,8 +18,7 @@
     echo $name;
 
     //if(isset($_GET['name'])){
-
-    //      echo $name;
+    //     echo $name;
     //  }
 ?>
 

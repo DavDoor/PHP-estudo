@@ -3,8 +3,6 @@
     
     $multiplos10 = array("10", "20", "30", "40", "50", "60", "70", "80", "90", "100");
 
-    echo $multiplos10[0];
-
     $count = 0;
     //while($couunt > 10)
     while($count < count($multiplos10)){
