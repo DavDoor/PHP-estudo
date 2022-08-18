@@ -2,19 +2,18 @@
     // criar uma calculadora(formulario) com select, usando as opcções de operações 
     // 3 campos
 -->
-        <h3>Calculadora de Operações Multiplas</h3>
-        <form action=" " method="post">
-            Campo 1: <input type="number" name="n1" placeholder="Numero 1" required><br>
-            Campo 2: <input type="number" name="n2" placeholder="Numero 2" required><br>
-            Campo 3: <select type="text" name="operacao" >
-                        <option value="">Escolha a operação</option> 
-                        <option value="multiplicacao">Multiplicação</option>
-                        <option value="soma">Adição</option>
-                        <option value="subtracao">Subtração</option>
-                        <option value="divisao">Divisão</option>
-                        
-                    </select><br>
-            <p><input type="submit" /></p>
+    <h3>Calculadora de Operações Multiplas</h3>
+    <form action=" " method="post">
+        Campo 1: <input type="number" name="n1" placeholder="Numero 1" required><br>
+        Campo 2: <input type="number" name="n2" placeholder="Numero 2" required><br>
+        Campo 3: <select type="text" name="operacao" >
+                    <option value="">Escolha a operação</option> 
+                    <option value="adicao">Adição</option>
+                    <option value="subtracao">Subtração</option>
+                    <option value="multiplicacao">Multiplicação</option>
+                    <option value="divisao">Divisão</option>                
+                </select><br>
+        <p><input type="submit" /></p>
         </form>
 
 <?php
@@ -26,8 +25,8 @@
 
     if (isset($n1) && isset($n2) && isset($operacao) && !empty($operacao)) {
 
-        if ($operacao == "soma" || $operacao == "atalho"){
-            echo soma($n1, $n2); 
+        if ($operacao == "adicao" || $operacao == "atalho"){
+            echo adicao($n1, $n2); 
         }
 
         else if ($operacao == "subtracao"){
@@ -44,14 +43,14 @@
             echo divisao($n1, $n2); 
         }
         else{
-            echo "Não é uma operação!";
+            echo "Não é possível completar a operação!";
         }
     }
     //else {
     //       echo "Todos os campos devem ser preeechidos.";
     //}
       // Função SOMAR
-    function soma($n1, $n2) {
+    function adicao($n1, $n2) {
         return $n1 + $n2; 
     }
 
