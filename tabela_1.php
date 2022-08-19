@@ -1,6 +1,8 @@
 <!--
     //criar uma tabela com clientes, compras, etc... 
-    //table
+    utilizar a tabela que você criou nas pegando os dados de um array dinamicamente
+    No caso, você deve ter um array de clientes, e o body da tabela deve conter os dados de um array "multidimensional" de clientes
+    Agora você já manja de array, for e a tag table da pra gente brincar com isso
 -->
 <style>
     table, tr, td, th {
@@ -12,7 +14,7 @@
     <tr>
         <th>Clientes</th>
         <th>Produto</th>
-        <th>Valor da compra</th>
+        <th>Valor</th>
     </tr>
     <tr>
         <td>David</td>
