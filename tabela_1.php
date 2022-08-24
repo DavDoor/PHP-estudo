@@ -8,6 +8,14 @@
     table, tr, td, th {
         border: 0.1px solid black
     }
+    table tr:nth-child(even) { 
+        background-color: red;
+    } 
+    
+    table tr:nth-child(odd) {
+        background-color: blue;
+    }
+
 </style>
 
 <table style="width:50%">

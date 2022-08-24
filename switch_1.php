@@ -10,7 +10,6 @@ if ($i == 0) {
 }
 
 
-
 switch ($i) {
     case 0:
         echo "i é igual a 0";

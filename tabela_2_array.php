@@ -22,8 +22,49 @@
     echo $compra[3][0];
     echo $compra[3][1];
     echo $compra[3][2];
-
 ?>
+    <style>
+        table, tr, td, th {
+            border: 0.1px solid black
+        }
+        table tr:nth-child(even) { 
+            background-color: red;
+        } 
+        
+        table tr:nth-child(odd) {
+            background-color: blue;
+        }
+
+    </style>
+
+<table style="width:50%">
+    <tr>
+        <th>Clientes</th>
+        <th>Produto</th>
+        <th>Valor</th>
+    </tr>
+    <tr>
+        <td><?php echo $compra[0][0]; ?></td> 
+        <td><?= $compra[0][1] ?></td>
+        <td>R$ 60,00</td>
+    <tr>
+        <td>Michelly</td>
+        <td>Secador</td>
+        <td>R$ 100,00</td>
+    </tr>
+    <tr>
+        <td>Rafael</td>
+        <td>Camisa</td>
+        <td>R$ 50,00</td>
+    </tr>
+    <tr>
+        <td>Camila</td>
+        <td>Vestido</td>
+        <td>R$ 80,00</td>
+    </tr>
+</table>
+
+
     
 
 
