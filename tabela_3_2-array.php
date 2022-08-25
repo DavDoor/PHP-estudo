@@ -45,26 +45,17 @@
         <th>Produto</th>
         <th>Valor</th>
     </tr>
-    <tr>
-        <td><?= $compra[0]["Nome"]; ?></td>
-        <td><?= $compra[0]["Produto"]; ?></td>
-        <td><?= $compra[0]["Valor"]; ?></td>
-    </tr>
-    <tr>
-        <td><?= $compra[1]["Nome"]; ?></td>
-        <td><?= $compra[1]["Produto"]; ?></td>
-        <td><?= $compra[1]["Valor"]; ?></td>
-    </tr>
-    <tr>
-        <td><?= $compra[2]["Nome"]; ?></td>
-        <td><?= $compra[2]["Produto"]; ?></td>
-        <td><?= $compra[2]["Valor"]; ?></td>
-    </tr>
-    <tr>
-        <td><?= $compra[3]["Nome"]; ?></td>
-        <td><?= $compra[3]["Produto"]; ?></td>
-        <td><?= $compra[3]["Valor"]; ?></td>
-    </tr>
+
+    <?php foreach($compra as $c) : ?>
+
+        <tr>
+            <td><?= $c["Nome"] ?></td> 
+            <td><?= $c["Produto"] ?></td>
+            <td> R$ <?= $c["Valor"] ?></td>
+        </tr>
+
+    <?php endforeach ?>
 </table>
+
 
 
