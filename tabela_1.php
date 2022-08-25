@@ -8,12 +8,12 @@
     table, tr, td, th {
         border: 0.1px solid black
     }
-    table tr:nth-child(even) { 
-        background-color: red;
+    table tr:nth-child(even) {  /* TABELA COLORIDA */
+        background-color: red; /* par vermelho */
     } 
     
-    table tr:nth-child(odd) {
-        background-color: blue;
+    table tr:nth-child(odd) {  /* TABELA COLORIDA */
+        background-color: blue; /* ímpar azul */
     }
 
 </style>

@@ -25,26 +25,23 @@
 
     if (isset($n1) && isset($n2) && isset($operacao) && !empty($operacao)) {
 
-        if ($operacao == "adicao" || $operacao == "atalho"){
-            echo adicao($n1, $n2); 
-        }
+    switch ($operacao) {
 
-        else if ($operacao == "subtracao"){
-
-            echo subtracao($n1, $n2); 
-        }
-        
-        else if ($operacao == "multiplicacao"){
-
-            echo multiplicacao($n1, $n2); 
-        }
-        else if ($operacao == "divisao"){
-
-            echo divisao($n1, $n2); 
-        }
-        else{
+        case $operacao == "adicao":
+          echo adicao($n1, $n2);
+          break;
+        case $operacao == "subtracao":
+          echo subtracao($n1, $n2);
+          break;
+        case $operacao == "multiplicacao":
+          echo multiplicacao($n1, $n2);
+          break;
+        case $operacao == "divisao":
+          echo divisao($n1, $n2); 
+          break;
+        default:
             echo "Não é possível completar a operação!";
-        }
+      }
     }
     //else {
     //       echo "Todos os campos devem ser preeechidos.";
