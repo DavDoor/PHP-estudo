@@ -1,16 +1,19 @@
-# Título
-Esta é uma frase.
+# Aprendendo PHP
 
-## Subtitulo
-
-Este é um subtitulo.
-
-# Título do Projeto
-
-Uma breve descrição sobre o que esse projeto faz e para quem ele é
-
+Estudo de programação com linguagem PHP
 
 ## Autores
 
-- [@Davidsantos](https://www.github.com/Davdoor)
+- [@DavidSantos](https://www.github.com/Davdoor)
+- [@DanylloValente](https://github.com/dvsilva)
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/DavDoor?tab=repositories/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/davidsantosvl/)
+
+
+
+
+
 
