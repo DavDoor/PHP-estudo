@@ -2,6 +2,15 @@
 
 Estudo de programação com linguagem PHP
 
+
+## Aprendizados
+
+O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e como você superou-os?
+
+## Mini Projetos
+
+## O que aprendi (as funções)
+
 ## Autores
 
 - [@DavidSantos](https://www.github.com/Davdoor)
