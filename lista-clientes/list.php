@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = " ";
 $dbname = "clientes";
 
 // Create connection
@@ -37,9 +37,12 @@ if ($result->num_rows > 0) {
     echo "<td>".$row["details"]."</td>";
     echo "</tr>";
     $total += $row["value"];
+    $totalqtd += $row["quantity"];
   }
-  echo "</table>";
-  echo "Valor " . $total;
+  echo "</table>"."<br>";
+  echo "Valor Total: " . $total;
+  echo "<br>";
+  echo "Quantidade Total: " . $totalqtd;
 } else {
   echo "0 results";
 }
