@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = " ";
+$password = "";
 $dbname = "clientes";
 
 // Create connection
@@ -27,6 +27,7 @@ if ($result->num_rows > 0) {
   // output data of each row
 
   $total = 0;
+  $totalqtd = 0;
   while($row = $result->fetch_assoc()) {
     echo "<tr>";
     echo "<td>".$row["id"]."</td>";

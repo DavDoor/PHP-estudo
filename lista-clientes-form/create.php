@@ -20,4 +20,9 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
+//Criar formulario com os campos compras (inserção)
+//botao enviar com post
+//fazer um if para enviar e coonfimar, caso seja preenchido (Insert into)
+//
 ?>

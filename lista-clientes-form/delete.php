@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "username";
-$password = " ";
+$username = "root";
+$password = "";
 $dbname = "clientes";
 
 // Create connection
@@ -11,13 +11,14 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO compras id, firstname, lastname, quantity, value, product, details)
-VALUES ('5', John', 'Doe', '20', '50', 'SmarTV', 'Pequeno')";
+$id = $_GET["id"];
+
+$sql = "DELETE FROM compras WHERE id=" . $id;
 
 if ($conn->query($sql) === TRUE) {
-  echo "Novo registro criado.";
+  echo "Registro deletado com sucesso!";
 } else {
-  echo "Errado: " . $sql . "<br>" . $conn->error;
+  echo "Erro de remoção do registro." . $conn->error;
 }
 
 $conn->close();
