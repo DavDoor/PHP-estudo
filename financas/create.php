@@ -1,4 +1,8 @@
 <?php
+  //base de dados finanças
+  //tabela movimentações > id, categoria(SElect)(alimentação, transporte, salario etc... ), 
+  //tipo (receita e despesas), observações das categorias, valor da movimentação,  
+
   $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : "" ;
   $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : "" ;
   $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : "" ;
@@ -53,6 +57,8 @@
     </form>
 
     <a href="index.php">Voltar para listagem</a>
+
+    
 
  
 
