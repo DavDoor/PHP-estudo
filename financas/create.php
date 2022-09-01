@@ -1,26 +1,26 @@
 <?php
   //base de dados finanças
-  //tabela movimentações > id, categoria(SElect)(alimentação, transporte, salario etc... ), 
+  //tabela movimentações > id, categoria(SElect) 
   //tipo (receita e despesas), observações das categorias, valor da movimentação,  
 
-  $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : "" ;
-  $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : "" ;
-  $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : "" ;
-  $value = isset($_POST['value']) ? $_POST['value'] : "" ;
-  $product = isset($_POST['product']) ? $_POST['product'] : "" ;
-  $details = isset($_POST['details']) ? $_POST['details'] : "" ;
+  $datapagamento = isset($_POST['datapagamento']) ? $_POST['datapagamento'] : "" ;
+  $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : "" ; // receita ou despesa
+  $valor = isset($_POST['valor']) ? $_POST['valor'] : "" ; 
+  $formapagamento = isset($_POST['formapagamento']) ? $_POST['formapagamento'] : "" ; // a vista, debito
+  $observacao = isset($_POST['observacao']) ? $_POST['observacao'] : "" ;// lazer, alimentação, saude, casa ?
+  $saldo = isset($_POST['saldo']) ? $_POST['saldo'] : "" ; // saldo final: negativo ou positivo ? 
 
-  if (isset($firstname) && !empty($firstname) &&
-  isset($lastname) && !empty($lastname) && 
-  isset($quantity) && !empty($quantity) &&
-  isset($value) && !empty($value) &&
-  isset($product) && !empty($product) &&
-  isset($details) && !empty($details))
+  if (isset($datapagamento) && !empty($datapagamento) &&
+  isset($tipo) && !empty($tipo) && 
+  isset($valor) && !empty($valor) &&
+  isset($formapagamento) && !empty($formapagamento) &&
+  isset($observacao) && !empty($observacao) && 
+  isset($saldo) && !empty($saldo))
   {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "clientes";
+    $dbname = "financas";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -29,7 +29,7 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO `compras` (`firstname`, `lastname`, `quantity`, `value`, `product`, `details`) VALUES ('$firstname', '$lastname', '$quantity', '$value', '$product', '$details')";
+    $sql = "INSERT INTO `financas` (`datapagamento`, `tipo`, `valor`, `formapagamento`, `observacao`, `saldo`) VALUES ('$datapagamento', '$tipo', '$valor', '$formapagamento', '$observacao')";
 
     if ($conn->query($sql) === TRUE) {
       echo "Novo registro criado.";

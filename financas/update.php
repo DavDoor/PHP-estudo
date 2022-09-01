@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "clientes";
+$dbname = "financas";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,7 +28,7 @@ isset($product) && !empty($product) &&
 isset($details) && !empty($details))
 {
 
-  $sql = "UPDATE `compras` SET firstname='$firstname', lastname='$lastname', quantity='$quantity', value='$value', product='$product', details='$details' WHERE id=" . $id;
+  $sql = "UPDATE `financas` SET firstname='$firstname', lastname='$lastname', quantity='$quantity', value='$value', product='$product', details='$details' WHERE id=" . $id;
   
   if ($conn->query($sql) === TRUE) {
     echo "Registro atualizado!";
