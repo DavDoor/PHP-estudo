@@ -29,7 +29,7 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO `financas` (`datapagamento`, `tipo`, `valor`, `formapagamento`, `observacao`, `saldo`) VALUES ('$datapagamento', '$tipo', '$valor', '$formapagamento', '$observacao')";
+    $sql = "INSERT INTO `financas` (`datapagamento`, `tipo`, `valor`, `formapagamento`, `observacao`, `saldo`) VALUES ('$datapagamento', '$tipo', '$valor', '$formapagamento', '$observacao', $saldo)";
 
     if ($conn->query($sql) === TRUE) {
       echo "Novo registro criado.";
@@ -47,12 +47,12 @@
 ?>
 
     <form action="create.php" method="post">
-        <p>First Name: <input type="text" name="firstname" placeholder="First Name"></p>
-        <p>Last Name: <input type="text" name="lastname" placeholder="Last Name"></p>
-        <p>Quatity: <input type="number" name="quantity" placeholder="Quatity"></p>
-        <p>Value: <input type="number" name="value" placeholder="Value"></p>
-        <p>Product: <input type="text" name="product" placeholder="Product"></p>
-        <p>Details: <input type="text" name="details" placeholder="Details"></p>
+        <p>First Name: <input type="text" name="datapagamento" placeholder="Data de Pagamento"></p>
+        <p>Last Name: <input type="text" name="tipo" placeholder="Tipo"></p>
+        <p>Quatity: <input type="number" name="valor" placeholder="Valor"></p>
+        <p>Value: <input type="number" name="formapagamento" placeholder="Forma de Pagamento"></p>
+        <p>Product: <input type="text" name="observacao" placeholder="Observação"></p>
+        <p>Details: <input type="text" name="saldo" placeholder="Saldo"></p>
         <p><input type="submit" /></p>
     </form>
 
