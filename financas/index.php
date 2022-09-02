@@ -11,45 +11,49 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, firstname, lastname, quantity, value, product, details FROM compras";
+$sql = "SELECT id, datapagamento, tipo, valor, formapagamento, categoria FROM movimentacoes";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   echo "<table><tr>";
   echo "<th>ID</th>";
-  echo "<th>Name</th>";
-  echo "<th>Quantity</th>";
-  echo "<th>value</th>";
-  echo "<th>Product</th>";
-  echo "<th>Details</th>";
+  echo "<th>datapagamento</th>";
+  echo "<th>tipo</th>";
+  echo "<th>valor</th>";
+  echo "<th>formapagamento</th>";
+  echo "<th>categoria</th>";
   echo "</tr>";
   
   // output data of each row
 
-  $total = 0;
-  $totalqtd = 0;
+  $saldo = 0;
   while($row = $result->fetch_assoc()) {
     echo "<tr>";
     echo "<td>".$row["id"]."</td>";
-    echo "<td>".$row["firstname"]." ".$row["lastname"]."</td>";
-    echo "<td>".$row["quantity"]."</td>";
-    echo "<td>".$row["value"]."</td>";
-    echo "<td>".$row["product"]."</td>";
-    echo "<td>".$row["details"]."</td>";
+    echo "<td>".$row["datapagamento"]."</td>";
+    echo "<td>".$row["tipo"]."</td>";
+    echo "<td>R$".$row["valor"]."</td>";
+    echo "<td>".$row["formapagamento"]."</td>";
+    echo "<td>".$row["categoria"]."</td>";
     echo "<td><a href='update-form.php?id=" . $row["id"] ."'>Atualizar</a></td>";
     echo "<td><a href='delete.php?id=" . $row["id"] ."'>Deletar</a></td>";
     echo "</tr>";
-    $total += $row["value"];
-    $totalqtd += $row["quantity"];
+
+    if($row["tipo"] == "Despesa"){  //resultado do saldo será positovo ou negativo
+
+      $saldo -= $row["valor"];
+    }else{
+
+      $saldo += $row["valor"];
+    }
   }
   echo "</table>"."<br>";
-  echo "Valor Total: " . $total;
+  echo "Saldo Final: R$ " . $saldo;
   echo "<br>";
-  echo "Quantidade Total: " . $totalqtd;
 } else {
   echo "0 results";
 }
 $conn->close();
 ?>
 <br>
-<a href="create.php">Criar Novo Cliente</a>
+<a href="create.php">Criar nova movimentação</a>

@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 
 $id = $_GET["id"];
 
-$sql = "DELETE FROM compras WHERE id=" . $id;
+$sql = "DELETE FROM movimentacoes WHERE id=" . $id;
 
 if ($conn->query($sql) === TRUE) {
   echo "Registro deletado com sucesso!";

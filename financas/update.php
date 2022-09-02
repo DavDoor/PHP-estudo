@@ -12,23 +12,21 @@ if ($conn->connect_error) {
 }
 
 $id = isset($_POST['id']) ? $_POST['id'] : "" ;
-$firstname = isset($_POST['firstname']) ? $_POST['firstname'] : "" ;
-$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : "" ;
-$quantity = isset($_POST['quantity']) ? $_POST['quantity'] : "" ;
-$value = isset($_POST['value']) ? $_POST['value'] : "" ;
-$product = isset($_POST['product']) ? $_POST['product'] : "" ;
-$details = isset($_POST['details']) ? $_POST['details'] : "" ;
+$datapagamento = isset($_POST['datapagamento']) ? $_POST['datapagamento'] : "" ;
+$tipo = isset($_POST['tipo']) ? $_POST['tipo'] : "" ;
+$valor = isset($_POST['valor']) ? $_POST['valor'] : "" ;
+$formapagamento = isset($_POST['formapagamento']) ? $_POST['formapagamento'] : "" ;
+$categoria = isset($_POST['categoria']) ? $_POST['categoria'] : "" ;
 
 if (isset($id) && !empty($id) &&
-isset($firstname) && !empty($firstname) &&
-isset($lastname) && !empty($lastname) && 
-isset($quantity) && !empty($quantity) &&
-isset($value) && !empty($value) &&
-isset($product) && !empty($product) &&
-isset($details) && !empty($details))
+isset($datapagamento) && !empty($datapagamento) &&
+isset($tipo) && !empty($tipo) && 
+isset($valor) && !empty($valor) &&
+isset($formapagamento) && !empty($formapagamento) &&
+isset($categoria) && !empty($categoria))
 {
 
-  $sql = "UPDATE `financas` SET firstname='$firstname', lastname='$lastname', quantity='$quantity', value='$value', product='$product', details='$details' WHERE id=" . $id;
+  $sql = "UPDATE `movimentacoes` SET datapagamento='$datapagamento', tipo='$tipo', valor='$valor', formapagamento='$formapagamento', categoria='$categoria' WHERE id=" . $id;
   
   if ($conn->query($sql) === TRUE) {
     echo "Registro atualizado!";

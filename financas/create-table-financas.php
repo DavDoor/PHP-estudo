@@ -12,11 +12,13 @@ if ($conn->connect_error) {
 }
 
 // sql to create table
-$sql = "CREATE TABLE financas (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-data VARCHAR(30) NOT NULL,
+$sql = "CREATE TABLE movimentacoes (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+datapagamento DATE NOT NULL,
 tipo VARCHAR(30) NOT NULL,
-classificacao VARCHAR(50),
+valor DOUBLE NOT NULL,
+formapagamento VARCHAR (30) NOT NULL,
+categoria VARCHAR(50),
 reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 

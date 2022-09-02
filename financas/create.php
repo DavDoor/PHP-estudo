@@ -7,15 +7,13 @@
   $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : "" ; // receita ou despesa
   $valor = isset($_POST['valor']) ? $_POST['valor'] : "" ; 
   $formapagamento = isset($_POST['formapagamento']) ? $_POST['formapagamento'] : "" ; // a vista, debito
-  $observacao = isset($_POST['observacao']) ? $_POST['observacao'] : "" ;// lazer, alimentação, saude, casa ?
-  $saldo = isset($_POST['saldo']) ? $_POST['saldo'] : "" ; // saldo final: negativo ou positivo ? 
+  $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : "" ;// lazer, alimentação, saude, casa ?
 
   if (isset($datapagamento) && !empty($datapagamento) &&
   isset($tipo) && !empty($tipo) && 
   isset($valor) && !empty($valor) &&
   isset($formapagamento) && !empty($formapagamento) &&
-  isset($observacao) && !empty($observacao) && 
-  isset($saldo) && !empty($saldo))
+  isset($categoria) && !empty($categoria))
   {
     $servername = "localhost";
     $username = "root";
@@ -29,7 +27,7 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO `financas` (`datapagamento`, `tipo`, `valor`, `formapagamento`, `observacao`, `saldo`) VALUES ('$datapagamento', '$tipo', '$valor', '$formapagamento', '$observacao', $saldo)";
+    $sql = "INSERT INTO `movimentacoes` (`datapagamento`, `tipo`, `valor`, `formapagamento`, `categoria`) VALUES ('$datapagamento', '$tipo', '$valor', '$formapagamento', '$categoria')";
 
     if ($conn->query($sql) === TRUE) {
       echo "Novo registro criado.";
@@ -47,12 +45,22 @@
 ?>
 
     <form action="create.php" method="post">
-        <p>First Name: <input type="text" name="datapagamento" placeholder="Data de Pagamento"></p>
-        <p>Last Name: <input type="text" name="tipo" placeholder="Tipo"></p>
-        <p>Quatity: <input type="number" name="valor" placeholder="Valor"></p>
-        <p>Value: <input type="number" name="formapagamento" placeholder="Forma de Pagamento"></p>
-        <p>Product: <input type="text" name="observacao" placeholder="Observação"></p>
-        <p>Details: <input type="text" name="saldo" placeholder="Saldo"></p>
+        <p>Data de Pagamento: <input type="date" name="datapagamento" placeholder="Data de Pagamento"></p>
+        <p>Tipo: <select type="text" name="tipo"></p>
+          <option value="">Escolha</option>
+          <option value="">Receita</option>
+          <option value="">Despesa</option>
+        </select>
+        <p>Valor: <input type="number" name="valor" placeholder="Valor"></p>
+        <p>Forma de Pagamento: <select type="text" name="formapagamento"></p>
+                <option value="">Escolha</option> 
+                <option value="adicao">Dinheiro</option>
+                <option value="adicao">Cartão de Crédito</option>
+                <option value="adicao">Cartão de Débito</option>
+                <option value="adicao">Boleto</option>
+                <option value="adicao">PIX</option>
+                </select><br>
+        <p>Categoria: <input type="text" name="categoria" placeholder="Categoria"></p>
         <p><input type="submit" /></p>
     </form>
 
