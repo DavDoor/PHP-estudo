@@ -6,8 +6,8 @@
   $datapagamento = isset($_POST['datapagamento']) ? $_POST['datapagamento'] : "" ;
   $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : "" ; // receita ou despesa
   $valor = isset($_POST['valor']) ? $_POST['valor'] : "" ; 
-  $formapagamento = isset($_POST['formapagamento']) ? $_POST['formapagamento'] : "" ; // a vista, debito
-  $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : "" ;// lazer, alimentação, saude, casa ?
+  $formapagamento = isset($_POST['formapagamento']) ? $_POST['formapagamento'] : "" ; 
+  $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : "" ;
 
   if (isset($datapagamento) && !empty($datapagamento) &&
   isset($tipo) && !empty($tipo) && 
@@ -43,24 +43,43 @@
 //fazer um if para enviar e coonfimar, caso seja preenchido (Insert into)
 //
 ?>
-
     <form action="create.php" method="post">
-        <p>Data de Pagamento: <input type="date" name="datapagamento" placeholder="Data de Pagamento"></p>
-        <p>Tipo: <select type="text" name="tipo"></p>
-          <option value="">Escolha</option>
-          <option value="">Receita</option>
-          <option value="">Despesa</option>
-        </select>
-        <p>Valor: <input type="number" name="valor" placeholder="Valor"></p>
-        <p>Forma de Pagamento: <select type="text" name="formapagamento"></p>
-                <option value="">Escolha</option> 
-                <option value="adicao">Dinheiro</option>
-                <option value="adicao">Cartão de Crédito</option>
-                <option value="adicao">Cartão de Débito</option>
-                <option value="adicao">Boleto</option>
-                <option value="adicao">PIX</option>
-                </select><br>
-        <p>Categoria: <input type="text" name="categoria" placeholder="Categoria"></p>
+      <div>
+        <label>Data de Pagamento:</label><br>
+        <input type="date" name="datapagamento" placeholder="Data de Pagamento">
+      </div>
+
+      <div>
+        <label>Tipo:</label><br>
+            <select type="text" name="tipo">
+              <option value="">Escolha</option>
+              <option value="Receita">Receita</option>
+              <option value="Despesa">Despesa</option>
+            </select>
+      </div>
+
+      <div>
+        <label>Valor:</label><br>
+        <input type="number" name="valor" placeholder="Valor"></p>
+      </div>
+
+      <div>
+        <label>Forma de Pagamento:</label><br>
+          <select type="text" name="formapagamento"></p>
+              <option value="">Escolha</option> 
+              <option value="Dinheiro">Dinheiro</option>
+              <option value="Cartão de Crédito">Cartão de Crédito</option>
+              <option value="Cartão de Débito">Cartão de Débito</option>
+              <option value="Boleto">Boleto</option>
+              <option value="PIX">PIX</option>
+          </select>
+      </div>
+
+      <div>
+        <label>Categoria:</label><br>
+        <input type="text" name="categoria" placeholder="Categoria"></label>
+      </div>
+
         <p><input type="submit" /></p>
     </form>
 
