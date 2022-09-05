@@ -1,0 +1,3 @@
+1) Criar uma tabela com sistema de tarefas
+2) com id, titulo, descrição, autor, status(concluido, em andamento, pendente), possivel inclusaõ de novos campos
+3)CRUD
